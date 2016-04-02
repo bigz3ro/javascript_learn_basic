@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Slide Show</title>
+	<script type="text/javascript">
+		// khoi tao gia tri dau cua Array
+		var i = 0 ;
+		// Array chua cac duong link toi anh
+		var array = new Array("image/layout_01.jpg","image/layout_02.jpg","image/layout_03.jpg");
+
+		//function khi nhan button next
+		function next(){
+			if(i < array.length -1){
+				i++;
+			}else{
+				i = 0;
+			}
+			document.getElementById("image").src = array[i];
+		}
+
+		//function khi nhan button previous
+		function previous(){
+			if(i > 0 ){
+				i--;
+			}else{
+				i = array.length - 1;
+			}
+			document.getElementById("image").src = array[i];
+		}
+
+	</script>
+</head>
+<body>
+	<h1>Slide show JS</h1>
+	<img src="image/layout_01.jpg" id="image" width="128px" height="128px"><br>
+	<button id="previous" onclick="previous();">Previous</button>
+	<button id="next" onclick="next();">next</button>
+</body>
+</html>
